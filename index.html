@@ -198,23 +198,17 @@
         .socials a:hover { transform: translateY(-3px); color: var(--accent-2); box-shadow: var(--shadow); }
         .socials svg { width: 20px; height: 20px; }
 
-        .avatar-wrap { position: relative; justify-self: center; }
+        .avatar-wrap { position: relative; justify-self: center; width: 100%; max-width: 330px; }
         .avatar {
-            width: 280px; height: 280px; border-radius: 28px; object-fit: cover;
-            background: linear-gradient(135deg, color-mix(in srgb, var(--accent-1) 30%, transparent), color-mix(in srgb, var(--accent-3) 30%, transparent));
-            border: 1px solid var(--border); box-shadow: var(--shadow-lg);
-            display: grid; place-items: center; color: var(--text-mut); font-size: 14px; text-align: center; padding: 20px;
-        }
-        .avatar.photo {
-            background-image: url('profile1.jpeg');
-            background-repeat: no-repeat;
-            background-size: 200% auto;     /* zoom — larger % = more zoomed in */
-            background-position: 65% 14%;   /* pan — x% y%; tweak to re-center the face */
-            padding: 0;
-            font-size: 0;                   /* hides the fallback text */
+            display: block;
+            width: 100%;
+            height: auto;              /* natural 869:771 ratio — full photo, nothing cropped */
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
         }
         .avatar-ring {
-            position: absolute; inset: -14px; border-radius: 34px; z-index: -1;
+            position: absolute; inset: -14px; border-radius: 30px; z-index: -1;
             background: var(--gradient); opacity: .18; filter: blur(6px);
         }
 
@@ -324,8 +318,7 @@
            ========================================================================== */
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; gap: 34px; }
-            .avatar-wrap { order: -1; }
-            .avatar { width: 210px; height: 210px; }
+            .avatar-wrap { order: -1; max-width: 280px; }
             .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; }
             .stats { grid-template-columns: repeat(2, 1fr); }
         }
@@ -377,10 +370,10 @@
             <div class="hero-grid">
                 <div>
                     <div class="status-pill"><span class="ping"></span> Open to research collaborations</div>
-        
+                    <!-- EDIT: your name -->
                     <h1>Hi, I'm <span class="gradient-text">Saksham</span></h1>
                     <div class="role">PhD Research Scholar · <span class="typed" id="typed">Computer Architecture</span></div>
-                    
+                    <!-- EDIT: 2–3 line intro -->
                     <p class="bio">
                         I research how <strong>intelligent, self-tuning hardware</strong> can make computers faster and
                         more efficient — currently focused on cache systems and reinforcement learning for
@@ -397,7 +390,7 @@
                         <a href="#research" class="btn btn-ghost">View research</a>
                     </div>
                     <div class="socials">
-                        
+                        <!-- EDIT: replace # with your real profile URLs -->
                         <a href="https://github.com/sakshamcse005/" target="_blank" aria-label="GitHub" title="GitHub">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 5 18 5.3 18 5.3c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
                         </a>
@@ -414,9 +407,7 @@
                 </div>
                 <div class="avatar-wrap">
                     <div class="avatar-ring"></div>
-                    <!-- Photo: profile.jpeg. To re-frame, tweak background-size (zoom) and
-                         background-position (pan x% y%) in the .avatar.photo rule above. -->
-                    <div class="avatar photo" role="img" aria-label="Saksham"></div>
+                    <img class="avatar" src="profile1.jpeg" alt="Saksham" width="869" height="771">
                 </div>
             </div>
 
@@ -462,7 +453,7 @@
             <div class="section-head reveal">
                 <span class="eyebrow">Research</span>
                 <h2>What I'm working on</h2>
-                <p>Selected projects and directions. <span style="color:var(--text-mut)"></span></p>
+                <p>Selected projects and directions. <span style="color:var(--text-mut)">[EDIT: replace with your real projects]</span></p>
             </div>
             <div class="grid cols-2">
                 <div class="card reveal">
